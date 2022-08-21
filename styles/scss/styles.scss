@@ -1,0 +1,49 @@
+@use "./components/start-panel";
+@use "./components/play-panel";
+@use "./components/modals";
+
+body {
+	background-color: rgb(217, 243, 243);
+}
+
+#wrapper {
+	box-shadow: 0px 0px 15px 5px #b6aaaa;
+
+	max-width: 1200px;
+	margin: 50px auto;
+
+	background-color: white;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+
+	width: 80%;
+	margin: 0 auto;
+}
+
+.display-play-panel {
+	display: flex;
+}
+
+.unselectable {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/casino.png">
+    <link rel="stylesheet" href="./styles/css/styles.css">
+    <script type="module" src="./scripts/index.js" defer></script>
+    <title>Slot Machine</title>
+</head>
+
+<body>
+    <div id="wrapper" class="unselectable">
+
+        <!-- Exit Modal -->
+        <div class="modal-exit">
+            <div class="modal-content">
+
+                <div class="modal-main">
+                    <p>Goodbye, <span id="span-name-exit"> </span>!
+                        Money left: <span id="span-total-money"> </span>,
+                        Total bet: <span id="span-total-bet"> </span>,
+                        Count of spins: <span id="span-count-of-spins"> </span></p>
+                </div>
+
+                <div class="modal-options">
+                    <div class="return-box">
+                        <button id="exit-modal-back-to-game-btn">Back To Game</button>
+                    </div>
+
+                    <div class="exit-box">
+                        <button id="exit-modal-exit-btn">Exit Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Game Modal -->
+        <div class="modal-endGame">
+            <div class="modal-content">
+
+                <div class="modal-main">
+                    <p>We are sorry, <span id="span-name-endGame">Default</span>, you have no money left!</p>
+
+                    <label for="total-money-modal">Enter New Amount:</label>
+                    <input value="10000" type="number" id="total-money-modal" name="total-money-modal" required>
+
+                </div>
+
+                <div class="modal-options">
+                    <div class="exit-box">
+                        <button id="endGame-modal-exit-btn">Exit Game</button>
+                    </div>
+
+                    <div class="return-box">
+                        <button id="endGame-modal-enter-again-btn">Enter Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Panel -->
+        <div class="start-panel">
+            <div class="container">
+                <form id="start-game-form">
+                    <div class="form-item">
+                        <label for="name">Name:</label>
+                        <input value="Default" type="text" id="name" name="name" placeholder="Enter name" required>
+                        <label for="name" class="error error-name"></label>
+                    </div>
+
+                    <div class="form-item">
+                        <label for="total-money">Total Money:</label>
+                        <input value="10000" type="number" id="total-money" name="total-money"
+                            placeholder="Enter Your Total Money" required>
+                        <label for="total-money" class="error error-total-money"></label>
+
+                    </div>
+
+                    <div class="form-item">
+                        <label for="spin-money-start">Money Per Spin:</label>
+                        <input value="50" type="number" id="spin-money-start" name="spin-money-start"
+                            placeholder="Enter Money Per Spin" required>
+                        <label for="spin-money" class="error error-spin-money"></label>
+
+                    </div>
+                </form>
+
+                <div class="start-btn-box">
+                    <button id="start-game-btn">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Play Panel -->
+        <div class="play-panel">
+            <div class="container">
+                <div class="top-bar">
+                    <div class="exit-btn-box">
+                        <button id="exit-game-btn"> Exit </button>
+                    </div>
+
+                    <div class="money-box">
+                        <p> Total Money: <b><span id="total-money-result">4500</span></b> <img
+                                src="./images/profits.png" width="45px" style="margin-bottom: -10px"></p>
+                    </div>
+                </div>
+
+                <div class="game-box">
+                    <div class="slot slot-0"> </div>
+                    <div class="slot slot-1"> </div>
+                    <div class="slot slot-2"> </div>
+                    <div class="slot slot-3"> </div>
+                    <div class="slot slot-4"> </div>
+                </div>
+
+                <div class="result-spin-box">
+                    <p><span class="spin-result"> <img src="./images/loader.png"> </span></p>
+                </div>
+
+                <div class="game-interaction">
+                    <label for="spin-money">Money Per Spin:</label>
+                    <input type="number" id="spin-money-input" name="spin-money" step="10" required>
+                    <button id="all-in-btn"> All In! </button>
+                    <button id="spin-btn"> Spin </button>
+                </div>
+
+                <div class="game-errors">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+@use "../abstracts/index" as *;
+
+.play-panel {
+	display: none;
+
+	.container {
+		.top-bar {
+			display: flex;
+			align-items: center;
+			padding: 0 20px;
+			border-bottom: 1px solid black;
+
+			.exit-btn-box {
+				flex: 1;
+
+				button {
+					padding: 8px 15px;
+					font-size: 0.9rem;
+
+					border: none;
+					border-radius: 8px;
+					background-color: tomato;
+					color: white;
+
+					opacity: 0.9;
+
+					&:hover {
+						opacity: 1;
+					}
+
+					&:disabled {
+						opacity: 0.3;
+					}
+
+					cursor: pointer;
+				}
+			}
+
+			.money-box {
+				display: flex;
+				justify-content: flex-end;
+				font-size: 1.2rem;
+
+				flex: 1;
+
+				img {
+					margin: 0 0 -10px 10px !important;
+				}
+			}
+		}
+
+		.game-box {
+			margin: 50px 0;
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+			flex-wrap: wrap;
+
+			.slot {
+				padding: 10px 10px 0 10px;
+				font-size: 3rem;
+
+				width: 100px;
+				height: 100px;
+
+				.symbol {
+					max-width: 100px;
+					animation: spin 1s ease 0s 1 normal forwards;
+				}
+			}
+		}
+
+		.result-spin-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.3rem;
+
+			height: 60px;
+
+			img {
+				width: 33px;
+				animation: loader 3s ease 0s 1 normal forwards;
+			}
+		}
+
+		.game-interaction {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			margin: 20px 0;
+			height: 50px;
+
+			font-size: 1.3rem;
+
+			#spin-money-input {
+				// height: 30px;
+				// padding: 0 5px 0 5px;
+				// width: 100px;
+				// font-size: 1rem;
+				// text-align: center;
+
+				@include playPanelInput;
+			}
+
+			#all-in-btn {
+				cursor: pointer;
+				padding: 8px 15px;
+				font-size: 1rem;
+
+				border: none;
+				border-radius: 8px;
+
+				opacity: 0.9;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+			#spin-btn {
+				padding: 8px 15px;
+				font-size: 1.1rem;
+				// margin-top: -1px;
+
+				cursor: pointer;
+
+				border: none;
+				border-radius: 8px;
+				background-color: gold;
+				opacity: 0.9;
+
+				color: white;
+				text-shadow: 0px 0px 5px black;
+				letter-spacing: 3px;
+
+				transition: all 0.3s;
+
+				&:hover {
+					opacity: 1;
+				}
+
+				&:disabled {
+					opacity: 0.3;
+				}
+			}
+		}
+
+		.game-errors {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+
+			font-size: 1.2rem;
+			color: red;
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		opacity: 0;
+		transform: rotate(-540deg) scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotate(0) scale(1);
+	}
+}
+
+@keyframes loader {
+	10% {
+		transform: translateX(1px) rotate(10deg);
+	}
+
+	20% {
+		transform: translateX(-1px) rotate(-10deg);
+	}
+
+	30% {
+		transform: translateX(1px) rotate(10deg);
+	}
+
+	40% {
+		transform: translateX(-1px) rotate(-10deg);
+	}
+
+	50% {
+		transform: translateX(1px) rotate(10deg);
+	}
+
+	60% {
+		transform: translateX(-1px) rotate(-10deg);
+	}
+
+	70% {
+		transform: translateX(1px) rotate(10deg);
+	}
+
+	80% {
+		transform: translateX(-1px) rotate(-10deg);
+	}
+
+	90% {
+		transform: translateX(1px) rotate(10deg);
+	}
+
+	100% {
+		transform: translateX(1px) rotate(0deg);
+	}
+}
+
+@media (max-width: 768px) {
+	.play-panel {
+		.container {
+			.top-bar {
+				.money-box {
+					img {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 568px) {
+	.play-panel {
+		.container {
+			.top-bar {
+				flex-direction: column;
+				margin-top: 20px;
+				.money-box {
+					img {
+						display: none;
+					}
+				}
+			}
+
+			.game-interaction {
+				label {
+					display: none;
+				}
+			}
+		}
+	}
+}
