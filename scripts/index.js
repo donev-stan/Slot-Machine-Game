@@ -80,6 +80,9 @@ const setInitialGlobalStats = ({ name, total_money, spin_money }) => {
 	globalStats.name = name;
 	globalStats.total_money = total_money;
 
+	globalStats.total_bet = 0;
+	globalStats.spin_count = 0;
+
 	globalStats.spin_money = spin_money;
 	playPanelElements.input_spin_money().value = globalStats.spin_money;
 };
